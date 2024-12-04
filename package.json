@@ -3,15 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack -p 3001",
-    "build": "next build",
+    "dev": "cross-env NODE_ENV_PLATFORM=window next dev  --turbopack -p 3001 --experimental-https",
+    "dev:l": "cross-env NODE_ENV_PLATFORM=linux next dev  --turbopack -p 3001",
+    "build": "cross-env ANALYZE=true next build",
     "start": "next start -p 3001",
     "lint": "eslint src --fix --ext .ts,.tsx,.js,.jsx --max-warnings 0"
   },
   "dependencies": {
+    "@ant-design/nextjs-registry": "^1.0.2",
+    "antd": "^5.22.3",
+    "immer": "^10.1.1",
     "next": "15.0.3",
-    "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.82.0",
+    "styled-components": "^6.1.13",
+    "zustand": "^5.0.1"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json}": [
@@ -22,10 +29,12 @@
   "devDependencies": {
     "@commitlint/cli": "^19.6.0",
     "@commitlint/config-conventional": "^19.6.0",
+    "@next/bundle-analyzer": "^15.0.3",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8",
     "eslint-config-next": "15.0.3",
     "eslint-config-prettier": "^9.1.0",
