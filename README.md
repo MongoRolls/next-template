@@ -1,39 +1,34 @@
-
 ## next-template
 
 #### 介绍
+
 基于 Next.js 14 实现的一个项目模版，大佬的介绍文章可见： [给上市公司从0到1搭建Next.js14项目](https://juejin.cn/post/7344571324305981503)。
 
 中文开发文档：[https://next.nodejs.cn/docs](https://next.nodejs.cn/docs)
 nextjs 官网：[https://nextjs.org/](https://nextjs.org/)
 
-目前集成了 `antd,styled-components,zustand,immer,sass,postcss,tailwindcss,eslint,prettier,commitlint,husky,cross-env` 等。
+目前集成了
+
+```bash
+antd,styled-components,zustand,immer,sass,postcss,tailwindcss,eslint,prettier,commitlint,husky,cross-env等
+```
 
 #### 安装教程
+
 git clone 项目到本地即可。
 
+### 抓虫
 
-使用说明
-下载依赖：
+Next15和antd有冲突的
 
-```bash
-npm install
-```
+`Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release.`
 
-开发启动：
+`TypeError: reactRender is not a function`
 
-```bash
-npm run dev
-```
+解决方式先临时可以降到14
 
-生产打包：
+刚好今天12.6 React19了，等等后续的更新
 
-```bash
-npm run build
-```
+#### 参考资料
 
-生产运行：
-
-```bash
-npm start
-```
+[antd issues](https://github.com/ant-design/ant-design/issues?q=is%3Aissue+is%3Aopen+next+)
